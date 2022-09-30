@@ -1,0 +1,104 @@
+body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Helvetica';
+    background-color: tomato;
+}
+
+/* main content */
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    height: 400px;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+    padding: 20px;
+    width: 300px;
+    counter-reset: items;
+}
+
+.item {
+    text-align: start;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 3px;
+    background-color: grey;
+    border: 1px solid grey;
+    color: #fff;
+    font-size: 10px;
+    padding: 5px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+
+div.item::before {
+    counter-increment: items;
+    content: counter(items);
+}
+
+.item:nth-of-type(4n+1) { order: 1; }
+.item:nth-of-type(4n+2) { order: 2; }
+.item:nth-of-type(4n+3) { order: 3; }
+.item:nth-of-type(4n)   { order: 4; }
+
+
+.item:nth-child(4n+3) {
+    background-color: red;
+    
+}
+
+.item:nth-child(n+21) {
+    background-color: blue;
+    
+}
+
+div.item:nth-last-of-type(2) {
+  background-color: red;
+}
+/* end main */
+
+/* button */
+
+.btn {
+    width: 501px;
+    height: 92px;
+    background-color: #44D3A8;
+    margin: 50px 44px 0 44px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+
+button:hover .rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 2px;
+    background-color: #C4C4C4;
+    margin-top: -10px;
+    margin-left: -244px;
+    box-shadow: 0px -8px 0  0px #C4C4C4,
+				790px  0px 0 0px #C4C4C4,
+				790px -8px 0 0px #C4C4C4;
+    transition: ease 0.5s;            
+}
